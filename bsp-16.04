@@ -42,7 +42,7 @@ RUN locale-gen en_US.UTF-8 && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-ENV USER_NAME guerra
+ENV USER_NAME rcc
 RUN echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${USER_NAME} && \
     chmod 0440 /etc/sudoers.d/${USER_NAME}
 
