@@ -3,18 +3,20 @@
 
 This repo allows to create a docker container for BSP development based on Ubuntu with Yocto or Buildroot.
 
+### Preparation
+Rename the `ENV USER_NAME rcc` username environment with your username.
 
-### Build image
-```
+### Build the image
+```bash
 docker build --build-arg "host_uid=$(id -u)" --build-arg "host_gid=$(id -g)" -t bsp-env -f <filename> .
 ```
 
-### Run container
-
+### Create the container
+```bash
+docker run -it -v $(pwd):/home --name <your-conatiner-name> bsp-env
 ```
-docker run -it -v $(pwd):/home bsp-env
+
+### Start the container
+```bash
+docker start -i <your-conatiner-name>
 ```
-
-## Contributing
-
-Feel free to fix/improve or suggest.
