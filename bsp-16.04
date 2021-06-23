@@ -39,7 +39,8 @@ RUN     DEBIAN_FRONTEND=noninteractive apt-get -y install   \
         liblz4-tool                                         \
         time                                                \
         parted                                              \
-        gdisk
+        gdisk                                               \
+        bash-completion
 
 RUN which dash &> /dev/null && (\
     echo "dash dash/sh boolean false" | debconf-set-selections && \
