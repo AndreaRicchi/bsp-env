@@ -1,48 +1,50 @@
 FROM    ubuntu:18.04
+ARG DEBIAN_FRONTEND=noninteractive
+
 RUN     apt-get update
-RUN     apt-get update --fix-missing
-RUN     DEBIAN_FRONTEND=noninteractive apt-get -y install   \
-        debianutils                                         \ 
-        build-essential                                     \
-        gcc-multilib                                        \
-        g++-multilib                                        \
-        git-core                                            \
-        git-lfs                                             \
-        diffstat                                            \
-        unzip                                               \ 
-        gawk                                                \
-        wget                                                \
-        texinfo                                             \
-        chrpath                                             \
-        socat                                               \
-        cpio                                                \
-        python                                              \
-        python3                                             \
-        python3-git                                         \
-        python3-pip                                         \
-        python3-pexpect                                     \
-        python3-jinja2                                      \
-        pylint3                                             \
-        libegl1-mesa                                        \
-        libsdl1.2-dev                                       \
-        libncurses-dev                                      \
-        iputils-ping                                        \
-        xz-utils                                            \
-        xterm                                               \
-        locales                                             \
-        rsync                                               \
-        bc                                                  \
-        dos2unix                                            \
-        sudo                                                \
-        bison                                               \
-        flex                                                \
-        libssl-dev                                          \
-        liblz4-tool                                         \
-        time                                                \
-        parted                                              \
-        gdisk                                               \
-        bash-completion                                     \
-        screen                                              \
+RUN     apt-get upgrade -y
+RUN     apt-get -y --fix-missing install \
+        debianutils \
+        build-essential \
+        gcc-multilib \
+        g++-multilib \
+        git-core \
+        git-lfs \
+        diffstat \
+        unzip \
+        gawk \
+        wget \
+        texinfo \
+        chrpath \
+        socat \
+        cpio \
+        python \
+        python3 \
+        python3-git \
+        python3-pip \
+        python3-pexpect \
+        python3-jinja2 \
+        pylint3 \
+        libegl1-mesa \
+        libsdl1.2-dev \
+        libncurses-dev \
+        iputils-ping \
+        xz-utils \
+        xterm \
+        locales \
+        rsync \
+        bc \
+        dos2unix \
+        sudo \
+        bison \
+        flex \
+        libssl-dev \
+        liblz4-tool \
+        time \
+        parted \
+        gdisk \
+        bash-completion \
+        screen \
         avahi-daemon
 
 RUN which dash &> /dev/null && (\
