@@ -42,7 +42,8 @@ RUN     DEBIAN_FRONTEND=noninteractive apt-get -y install   \
         parted                                              \
         gdisk                                               \
         bash-completion                                     \
-        screen
+        screen                                              \
+        avahi-daemon
 
 RUN which dash &> /dev/null && (\
     echo "dash dash/sh boolean false" | debconf-set-selections && \
