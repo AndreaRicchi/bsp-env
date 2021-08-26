@@ -13,7 +13,7 @@ docker build --build-arg "host_uid=$(id -u)" --build-arg "host_gid=$(id -g)" -t 
 
 ### Create the container
 ```bash
-docker run -it -v $(pwd):/home/host --name <your-conatiner-name> bsp-env
+docker run -it --privileged -v $(pwd):/home/host --name <your-conatiner-name> bsp-env
 ```
 
 ### Start the container
